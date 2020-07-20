@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Raleway', sans-serif;
+}
+
+
+/* .logo img {
+    max-width: 100%;
+    max-height: 100%;
+} */
+
+.menu-items {
+    padding-left: 0 !important;
+    line-height: 2em;
+    height: 100vh;
+    -webkit-box-shadow: 9px 10px 19px -11px rgba(0, 0, 0, 0.52);
+    -moz-box-shadow: 9px 10px 19px -11px rgba(0, 0, 0, 0.52);
+    box-shadow: 9px 10px 19px -11px rgba(0, 0, 0, 0.52);
+}
+
+.menu-items nav a {
+    margin: 5px 20px;
+    border-radius: 15px;
+    text-align: left;
+}
+
+.menu-items nav a i {
+    padding-right: 10px;
+}
+
+.fa-chevron-down {
+    float: right;
+}
+
+.patient {
+    line-height: 100%;
+}
+
+.welcome-tab {
+    background: rgba(193, 191, 234, 1);
+    background: -moz-linear-gradient(left, rgba(193, 191, 234, 1) 8%, rgba(206, 199, 236, 1) 40%, rgba(207, 199, 236, 1) 41%, rgba(216, 208, 239, 1) 59%, rgba(221, 214, 241, 1) 69%, rgba(235, 233, 249, 1) 100%);
+    /* background: -webkit-gradient(left top, right top, color-stop(8%, rgba(193, 191, 234, 1)), color-stop(40%, rgba(206, 199, 236, 1)), color-stop(41%, rgba(207, 199, 236, 1)), color-stop(59%, rgba(216, 208, 239, 1)), color-stop(69%, rgba(221, 214, 241, 1)), color-stop(100%, rgba(235, 233, 249, 1)));
+    background: -webkit-linear-gradient(left, rgba(193, 191, 234, 1) 8%, rgba(206, 199, 236, 1) 40%, rgba(207, 199, 236, 1) 41%, rgba(216, 208, 239, 1) 59%, rgba(221, 214, 241, 1) 69%, rgba(235, 233, 249, 1) 100%);
+    background: -o-linear-gradient(left, rgba(193, 191, 234, 1) 8%, rgba(206, 199, 236, 1) 40%, rgba(207, 199, 236, 1) 41%, rgba(216, 208, 239, 1) 59%, rgba(221, 214, 241, 1) 69%, rgba(235, 233, 249, 1) 100%);
+    background: -ms-linear-gradient(left, rgba(193, 191, 234, 1) 8%, rgba(206, 199, 236, 1) 40%, rgba(207, 199, 236, 1) 41%, rgba(216, 208, 239, 1) 59%, rgba(221, 214, 241, 1) 69%, rgba(235, 233, 249, 1) 100%);
+    background: linear-gradient(to right, rgba(193, 191, 234, 1) 8%, rgba(206, 199, 236, 1) 40%, rgba(207, 199, 236, 1) 41%, rgba(216, 208, 239, 1) 59%, rgba(221, 214, 241, 1) 69%, rgba(235, 233, 249, 1) 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#c1bfea', endColorstr='#ebe9f9', GradientType=1); */
+    border-radius: 10px;
+    -webkit-box-shadow: 0px 13px 19px -11px rgba(0, 0, 0, 0.52);
+    -moz-box-shadow: 0px 13px 19px -11px rgba(0, 0, 0, 0.52);
+    box-shadow: 0px 13px 19px -11px rgba(0, 0, 0, 0.52);
+}
+
+.dashboard-info-panel {
+    -webkit-box-shadow: 0px 13px 19px -11px rgba(0, 0, 0, 0.52);
+    -moz-box-shadow: 0px 13px 19px -11px rgba(0, 0, 0, 0.52);
+    box-shadow: 0px 13px 19px -11px rgba(0, 0, 0, 0.52);
+}
+
+div.calender {
+    overflow: auto;
+    white-space: nowrap;
+}
+
+.calender a {
+    display: inline-block;
+    text-align: center;
+}
+
+.dashboard-timeline {
+    height: 100vh;
+    -webkit-box-shadow: 9px 10px 19px -11px rgba(0, 0, 0, 0.52);
+    -moz-box-shadow: 9px 10px 19px -11px rgba(0, 0, 0, 0.52);
+    box-shadow: 9px 10px 19px -11px rgba(0, 0, 0, 0.52);
+}
