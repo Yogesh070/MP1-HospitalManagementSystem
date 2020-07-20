@@ -1,1 +1,3 @@
 # MP1-HospitalManagementSystem
+
+The project “**Hospital Management System**” is a web-based application. It facilitates managing the function of the hospital. The software covers the services that unify and simplify the work of health care professionals as well as their interaction with  patients. This system will help in making the whole functioning paperless. It integrates all the information regarding patients, doctors, staff, hospital administrative details etc. into one software.
