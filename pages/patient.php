@@ -1,8 +1,8 @@
-<?php include "./includes/header.php"?>
-<?php include "./includes/menu.php"?>
+<?php include "../includes/header.php"?>
+<?php include "../includes/menu.php"?>
 <div class="col-md-10">
     <div class="container m-2">
-        <?php require_once './includes/addNewPatient.php'?>
+        <?php require_once '../includes/addNewPatient.php'?>
         <?php
         if(isset($_SESSION['message'])):?>
         <div class="alert alert-<?=$_SESSION['msg_type']?>" role="alert">
