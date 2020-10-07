@@ -14,7 +14,7 @@
 .menu-items {
     padding-left: 0 !important;
     line-height: 2em;
-    height: 100vh;
+    min-height: 100vh;
     -webkit-box-shadow: 9px 10px 19px -11px rgba(0, 0, 0, 0.52);
     -moz-box-shadow: 9px 10px 19px -11px rgba(0, 0, 0, 0.52);
     box-shadow: 9px 10px 19px -11px rgba(0, 0, 0, 0.52);

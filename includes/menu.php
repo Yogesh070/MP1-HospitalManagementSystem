@@ -12,7 +12,7 @@
                         <a class="nav-link btn" href="#"><i class="fas fa-chevron-right"></i>Assestment</a>
                     </div>
                 </div>
-                <a class="nav-link btn" href="patient.php"><i class="fas fa-exchange-alt"></i>Shift</a>
+                <a class="nav-link btn" href="schedule.php"><i class="fas fa-exchange-alt"></i>Shift</a>
                 <a class="nav-link btn" href="#"><i class="fas fa-vial"></i>Lab</a>
                 <a class="nav-link btn" href="#"><i class="fas fa-capsules"></i>Medication</a>
                 <a class="nav-link btn" href="#"><i class="fas fa-calendar-check"></i>Appointment</a>

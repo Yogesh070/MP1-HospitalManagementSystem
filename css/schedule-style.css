@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+.top-section {
+  margin: 2rem 0 8rem 0;
+  max-width: 700px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.top-section .button-group {
+  padding-right: 5px;
+  background-color: #ececec;
+  border-radius: 20px;
+}
+
+.top-section .button-group .active {
+  padding: 10px;
+  background-color: white;
+  margin: 0;
+  -webkit-box-shadow: 0px 4px 15px -9px #968e96;
+  box-shadow: 0px 4px 15px -9px #968e96;
+}
+
+.top-section .button-group button {
+  font-size: 15px;
+  background-color: #ececec;
+  padding: 5px;
+  margin: 0 15px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+}
+
+.form-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.form-group select {
+  outline: none !important;
+}
+
+.schedule-panel {
+  margin-top: 3rem;
+}
+
+#profile_picture {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  margin-right: 10px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.date-column {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.date-column > #date {
+  padding-right: 10px;
+  font-size: 2.5rem;
+}
+
+.month {
+  margin-top: 5px;
+  color: #afaeae;
+}
+
+.table-head {
+  padding: 0 !important;
+}
+/*# sourceMappingURL=schedule-style.css.map */

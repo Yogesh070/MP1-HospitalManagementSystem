@@ -1,8 +1,8 @@
-<?php include "../includes/header.php"?>
-<?php include "../includes/menu.php"?>
+<?php include "includes/header.php"?>
+<?php include "includes/menu.php"?>
 <div class="col-md-10">
     <div class="container m-2">
-        <?php require_once '../includes/addNewPatient.php'?>
+        <?php require_once 'includes/addNewPatient.php'?>
         <?php
         if(isset($_SESSION['message'])):?>
         <div class="alert alert-<?=$_SESSION['msg_type']?>" role="alert">
@@ -22,7 +22,7 @@
             <div class="collapse m-3" id="addNewPatient">
         <?php endif;?>
             <div class="card card-body">
-                <form action="./includes/addNewPatient.php" method="POST">
+                <form action="includes/addNewPatient.php" method="POST">
                 <div class="form-group row">
                         <div class="col-sm-10">
                             <input type="hidden" class="form-control" name="id" value="<?php echo $id;?>">
@@ -107,7 +107,7 @@ $result=$mysqli->query("SELECT * FROM patientdata") or die($mysqli->error);
                     <th>
                         <a class="btn btn-outline-info" href="patient.php?edit=<?php echo $row['ID'];?>">Edit</a>
                         <a class="btn btn-outline-danger"
-                            href="./includes/addNewPatient.php?delete=<?php echo $row['ID'];?>">Delete</a>
+                            href="includes/addNewPatient.php?delete=<?php echo $row['ID'];?>">Delete</a>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-outline-primary" data-toggle="modal"
                             data-target="#<?php echo $row['Name'];?>">
