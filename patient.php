@@ -59,7 +59,7 @@
                     <div class="form-group row">
                         <label for="dob" class="col-sm-2 col-form-label">D.O.B</label>
                         <div class="col-sm-10">
-                            <input type="date" class="form-control" id="dob" name="dob" value="<?php echo $dob;?>"
+                            <input type="date" class="form-control" id="dob"  max='<?php echo date("Y-m-d") ?>' name="dob" value="<?php echo $dob;?>"
                                 required>
                         </div>
                     </div>
