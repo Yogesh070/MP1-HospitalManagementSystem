@@ -45,7 +45,7 @@
                         </button>
                     </div>
                     <div class="modal-body p-4">
-                        <form action="addSchedule.php" method="POST">
+                        <form action="includes/addSchedule.php" method="POST">
                             <div class="form-row">
                                 <div class="form-group">
                                     <label for="name">Name</label>
@@ -72,10 +72,10 @@
                                     <input type="time" class="form-control" name="to_time">
                                 </div>
                             </div>
-                            <div class="form-group">
+                            <!-- <div class="form-group">
                                 <label for="minimum_hrs">Minimum Hours</label>
                                 <input type="number" class="form-control" id="minimum_hrs"  name="minimum_hrs">
-                            </div>
+                            </div> -->
                             <div class="form-group">
                                 <label for="recurring_shift">Recurring Shift</label>
                                 <select class="form-control" placeholder="recurring_shift" name="recurring_shift" id="recurring_shift" required>

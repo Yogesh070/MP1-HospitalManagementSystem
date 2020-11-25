@@ -6,7 +6,7 @@ $dob='';
 $update=false;
 $id=0;
 
-$mysqli=new mysqli('localhost','root','','patientinfo') or die(mysqli_error($mysqli));
+$mysqli=new mysqli('localhost','root','','hms_data') or die(mysqli_error($mysqli));
 
 if(isset($_POST['save'])){
     $name = $_POST['name'];

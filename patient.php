@@ -78,7 +78,7 @@
         </div>
 
         <?php
-$mysqli=new mysqli('localhost','root','','patientinfo') or die(mysqli_error($mysqli));
+$mysqli=new mysqli('localhost','root','','hms_data') or die(mysqli_error($mysqli));
 $result=$mysqli->query("SELECT * FROM patientdata") or die($mysqli->error);
 // pre_r($result->fetch_assoc());
 //  function pre_r($array){
