@@ -16,6 +16,6 @@
                 <a class="nav-link btn" href="#"><i class="fas fa-vial"></i>Lab</a>
                 <a class="nav-link btn" href="#"><i class="fas fa-capsules"></i>Medication</a>
                 <a class="nav-link btn" href="#"><i class="fas fa-calendar-check"></i>Appointment</a>
-                <a class="nav-link btn" href="#"><i class="fas fa-cog"></i>Setting</a>
+                <a class="nav-link btn" href="settings.php"><i class="fas fa-cog"></i>Setting</a>
             </nav>
         </div>
