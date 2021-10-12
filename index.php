@@ -1,5 +1,9 @@
 <?php include "./includes/header.php"?>
 <?php include "./includes/menu.php"?>
+<?php include './services/getNews.php'?>
+<style>
+<?php include 'css/style.css'; ?>
+</style>
 <?php $tiltle="Dashboard"?>
 <div class="col-lg-10">
     <div class="container">
@@ -23,19 +27,38 @@
             <div class="col-lg-3 dashboard-timeline">
                 <div class="container my-4">
                     <h3><?php echo date("M-Y")?></h3>
-                    <div class="nav-tab calender">
-                            <a class="nav-link" href="#">19 July</a>
-                            <a class="nav-link" href="#">20 July</a>
-                            <a class="nav-link active" href="#">21 July</a>
-                            <a class="nav-link" href="#">22 July</a>
-                            <a class="nav-link" href="#">21 July</a>
-                            <a class="nav-link" href="#">22 July</a>
-                            <a class="nav-link " href="#">21 July</a>
-                            <a class="nav-link" href="#">22 July</a>
+                    <div class="nav-tab calender"> 
+                    <div class="date-card active">
+                            <p><?php $date = strtotime("-1 day");
+                                            echo date("D", $date); ?></p>
+                            <p><?php $date = strtotime("-1 day");
+                                            echo date("d", $date); ?></p>
+                            </div>
+                            
+                            <div class="date-card active">
+                            <p> <?php echo date("D")?></p>
+                            <p><?php echo date("d")?></p>
+                            </div>
+                            <div class="date-card ">
+                            <p><?php $date = strtotime("+1 day");
+                                            echo date("D", $date); ?></p>
+                            <p><?php $date = strtotime("+1 day");
+                                            echo date("d", $date); ?></p>
+                            </div>
+                            <div class="date-card">
+                            <p><?php $date = strtotime("+2 day");
+                                            echo date("D", $date); ?></p>
+                            <p><?php $date = strtotime("+2 day");
+                                            echo date("d", $date); ?></p>
+                            </div>
                     </div>
-                </div>
-                <div class="container">
-                    <h2>hello world</h2>
+                </div> 
+                <div class="container" id="news-container">
+                    <h3>Latest News</h3>
+              <?php  foreach ($decodedData['articles'] as $i=> $title) {
+                    if ($i++ > 3) break;
+                    echo '<h6>'.$title['title'].'</h6>';} ?>
+
                 </div>
             </div>
         </div>
