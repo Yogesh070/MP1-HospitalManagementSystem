@@ -9,10 +9,10 @@
                     <div>
                         <a class="nav-link btn" href="patient.php"><i class="fas fa-chevron-right"></i>Patient
                             Listing</a>
-                        <a class="nav-link btn" href="#"><i class="fas fa-chevron-right"></i>Assestment</a>
+                        <!-- <a class="nav-link btn" href="#"><i class="fas fa-chevron-right"></i>Assestment</a> -->
                     </div>
                 </div>
-                <a class="nav-link btn" href="schedule.php"><i class="fas fa-exchange-alt"></i>Shift</a>
+                <a class="nav-link btn" href="schedule.php"><i class="fas fa-exchange-alt"></i>Schedule</a>
                 <a class="nav-link btn" href="doctor.php"><i class="fas fa-vial"></i>Doctor</a>
                 <a class="nav-link btn" href="room.php"><i class="fas fa-capsules"></i>Rooms</a>
                 <a class="nav-link btn" href="department.php"><i class="fas fa-calendar-check"></i>Department</a>

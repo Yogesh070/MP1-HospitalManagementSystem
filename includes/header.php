@@ -26,7 +26,7 @@
     <!-- section for navbar -->
     <section>
         <nav class="navbar navbar-light bg-light">
-            <a class="navbar-brand">HMS POKHARA</a>
+            <a class="navbar-brand">HMS 🏥</a>
             <form class="form-inline">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
@@ -34,10 +34,10 @@
                     <button class="btn btn-primary dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <i class="fas fa-user"></i>
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                        <button class="dropdown-item" type="button">Setting</button>
+                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                        <button class="dropdown-item" type="button"><a href="settings.php">Setting</a></button>
                         <button class="dropdown-item" type="button">Help</button>
-                        <button class="dropdown-item" type="button">Log Out</button>
+                        <button class="dropdown-item" type="button"><a href="logout.php">Log Out</a></button>
                     </div>
                 </div>
             </form>
