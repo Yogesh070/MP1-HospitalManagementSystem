@@ -5,14 +5,17 @@ $gender='';
 $dob='';
 $update=false;
 $id=0;
+$address='';
+$table_name='patient';
 
-$mysqli=new mysqli('localhost','root','','hms_data') or die(mysqli_error($mysqli));
+$mysqli=new mysqli('localhost','root','','hospital_management_system') or die(mysqli_error($mysqli));
 
 if(isset($_POST['save'])){
     $name = $_POST['name'];
     $gender = $_POST['gender'];
     $dob = $_POST['dob'];
-    $mysqli->query("INSERT INTO patientdata (Name, Gender, DOB) VALUES ('$name','$gender','$dob')") or die($mysqli->error);
+    $address=$_POST['address'];
+    $mysqli->query("INSERT INTO patient (id,name, gender, dob,address) VALUES ('$id','$name','$gender','$dob','$address')") or die($mysqli->error);
 
     $_SESSION['message']="Record has been added Successfully!";
     $_SESSION['msg_type']="success";
@@ -22,7 +25,7 @@ if(isset($_POST['save'])){
 
 if(isset($_GET['delete'])){
     $id=$_GET['delete'];
-    $mysqli->query("DELETE FROM patientdata WHERE ID=$id") or die($mysqli->error);
+    $mysqli->query("DELETE FROM patient WHERE id=$id") or die($mysqli->error);
 
     $_SESSION['message']="Record has been deleted Successfully!";
     $_SESSION['msg_type']="danger";
@@ -30,15 +33,14 @@ if(isset($_GET['delete'])){
     header("location: ../patient.php");
 }
 if(isset($_GET['edit'])){
-    $id=$_GET["edit"];
+    $id=$_GET['edit'];
     $update=true;
-    $result=$mysqli->query("SELECT * FROM patientdata WHERE ID=$id") or die($mysqli->error);
-    if(count($result)==1){
-        $row=$result->fetch_array();
-        $name=$row['Name'];
-        $gender=$row['Gender'];
-        $dob=$row['DOB'];
-    }
+    $r=$mysqli->query("SELECT * FROM patient WHERE id=$id Limit 1") or die($mysqli->error);
+    $result=$r->fetch_assoc();
+    $name=$result['name'];
+    $gender=$result['gender'];
+    $dob=$result['dob'];
+    $address=$result['address'];
 }
 
 if(isset($_POST['update'])){
@@ -46,7 +48,8 @@ if(isset($_POST['update'])){
     $name = $_POST['name'];
     $gender = $_POST['gender'];
     $dob = $_POST['dob'];
-    $mysqli->query("UPDATE patientdata SET Name='$name', Gender='$gender', DOB='$dob' WHERE ID=$id") or die($mysqli->error);
+    $address=$_POST['address'];
+    $mysqli->query("UPDATE patient SET name='$name', gender='$gender', dob='$dob', address='$address' WHERE id=$id") or die($mysqli->error);
 
     $_SESSION['message']="Record has been updated Successfully";
     $_SESSION['msg_type']="warning";
