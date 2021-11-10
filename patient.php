@@ -1,8 +1,9 @@
 <?php include "includes/header.php"?>
 <?php include "includes/menu.php"?>
+<?php require_once 'includes/addNewPatient.php'?>
 <div class="col-md-10">
     <div class="container m-2">
-        <?php require_once 'includes/addNewPatient.php'?>
+        
         <?php
         if(isset($_SESSION['message'])):?>
         <div class="alert alert-<?=$_SESSION['msg_type']?>" role="alert">
@@ -64,6 +65,13 @@
                         </div>
                     </div>
                     <div class="form-group row">
+                        <label for="address" class="col-sm-2 col-form-label">Address</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="address" name="address" value="<?php echo $address;?>"
+                                required>
+                        </div>
+                    </div>
+                    <div class="form-group row">
                         <div class="col-sm-10">
                             <?php 
                         if($update==true):?>
@@ -78,8 +86,8 @@
         </div>
 
         <?php
-$mysqli=new mysqli('localhost','root','','hms_data') or die(mysqli_error($mysqli));
-$result=$mysqli->query("SELECT * FROM patientdata") or die($mysqli->error);
+$mysqli=new mysqli('localhost','root','','hospital_management_system') or die(mysqli_error($mysqli));
+$result=$mysqli->query("SELECT * FROM patient") or die($mysqli->error);
 // pre_r($result->fetch_assoc());
 //  function pre_r($array){
 //      echo '<pre>';
@@ -94,28 +102,32 @@ $result=$mysqli->query("SELECT * FROM patientdata") or die($mysqli->error);
                     <th scope="col">Name</th>
                     <th scope="col">Gender</th>
                     <th scope="col">D.O.B</th>
+                    <th scope="col">Address</th>
+
                     <th scope="col">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <?php while($row=$result->fetch_assoc()):?>
                 <tr>
-                    <td><?php echo $row['ID']; ?></td>
-                    <th scope="row"><?php echo $row['Name']; ?></th>
-                    <th><?php echo $row['Gender']; ?></th>
-                    <th><?php echo $row['DOB']; ?></th>
+                    <td><?php echo $row['id']; ?></td>
+                    <th scope="row"><?php echo $row['name']; ?></th>
+                    <th><?php echo $row['gender']; ?></th>
+                    <th><?php echo $row['dob']; ?></th>
+                    <th><?php echo $row['address']; ?></th>
+
                     <th>
-                        <a class="btn btn-outline-info" href="patient.php?edit=<?php echo $row['ID'];?>">Edit</a>
+                        <a class="btn btn-outline-info" href="patient.php?edit=<?php echo $row['id'];?>">Edit</a>
                         <a class="btn btn-outline-danger"
-                            href="includes/addNewPatient.php?delete=<?php echo $row['ID'];?>">Delete</a>
+                            href="includes/addNewPatient.php?delete=<?php echo $row['id'];?>">Delete</a>
                         <!-- Button trigger modal -->
                         <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                            data-target="#<?php echo $row['Name'];?>">
+                            data-target="#<?php echo $row['name'];?>">
                             View
                         </button>
 
                         <!-- Modal -->
-                        <div class="modal fade" id="<?php echo $row['Name'];?>" tabindex="-1" role="dialog"
+                        <div class="modal fade" id="<?php echo $row['name'];?>" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -126,10 +138,10 @@ $result=$mysqli->query("SELECT * FROM patientdata") or die($mysqli->error);
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <h2><?php echo $row['Name'];?></h2>
+                                        <h2><?php echo $row['name'];?></h2>
                                         <p>
-                                            ID : <?php echo $row['ID'];?><br>
-                                            DATE OF BIRTH: <?php echo $row['DOB'];?>
+                                            ID : <?php echo $row['id'];?><br>
+                                            DATE OF BIRTH: <?php echo $row['dob'];?>
                                         </p>
                                     </div>
                                     <div class="modal-footer">
