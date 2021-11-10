@@ -3,7 +3,7 @@
 <?php require_once 'includes/addSchedule.php' ?>
 <link rel="stylesheet" href="css/schedule-style.css" />
 <div class="col-sm-10">
-    <div class="container">
+    <div class="container-fluid">
         <?php
         if(isset($_SESSION['message'])):?>
         <div class="alert alert-<?=$_SESSION['msg_type']?>" role="alert">
@@ -13,15 +13,14 @@
           ?>
         </div>
         <?php endif?>
-        <div class="top-section">
+        <div class="my-4">
             <h2>Schedules</h2>
-            <div class="button-group">
+            <!-- <div class="button-group">
                 <button class="active">Member</button>
                 <button>Week</button>
                 <button>Day</button>
-            </div>
+            </div> -->
         </div>
-        <span>Member</span>
         <div class="group-form">
             <!-- <div>
                 <select class="form-control" placeholder="Role" name="role" required>
@@ -116,7 +115,7 @@
     $result = $mysqli->query("SELECT * FROM schedule") or die($mysqli->error);
     $doctor = $mysqli->query("SELECT * FROM doctor") or die($mysqli->error);
     ?>
-    <div class="container schedule-panel">
+    <div class="container-fluid schedule-panel">
         <table class="table ">
             <thead>
                 <tr>

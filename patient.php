@@ -103,7 +103,6 @@ $result=$mysqli->query("SELECT * FROM patient") or die($mysqli->error);
                     <th scope="col">Gender</th>
                     <th scope="col">D.O.B</th>
                     <th scope="col">Address</th>
-
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -121,15 +120,15 @@ $result=$mysqli->query("SELECT * FROM patient") or die($mysqli->error);
                         <a class="btn btn-outline-danger"
                             href="includes/addNewPatient.php?delete=<?php echo $row['id'];?>">Delete</a>
                         <!-- Button trigger modal -->
-                        <button type="button" class="btn btn-outline-primary" data-toggle="modal"
-                            data-target="#<?php echo $row['name'];?>">
+                        <!-- <button type="button" class="btn btn-outline-primary" data-toggle="modal"
+                            data-target="#<?php echo $row['id'];?>">
                             View
-                        </button>
+                        </button> -->
 
                         <!-- Modal -->
-                        <div class="modal fade" id="<?php echo $row['name'];?>" tabindex="-1" role="dialog"
+                        <div class="modal fade" id="<?php echo $row['id'];?>" tabindex="-1" role="dialog"
                             aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
+                            <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
                                         <h5 class="modal-title" id="exampleModalLabel">Profile</h5>
@@ -138,6 +137,7 @@ $result=$mysqli->query("SELECT * FROM patient") or die($mysqli->error);
                                         </button>
                                     </div>
                                     <div class="modal-body">
+                                        <h2>fdsf</h2>
                                         <h2><?php echo $row['name'];?></h2>
                                         <p>
                                             ID : <?php echo $row['id'];?><br>

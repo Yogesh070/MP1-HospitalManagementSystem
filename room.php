@@ -1,7 +1,7 @@
 <?php include "includes/header.php"?>
 <?php include "includes/menu.php"?>
 <div class="col-md-10 " >
-    <h2 class="h1 mt-5" style="font-weight:bold"> Room Status</h2>
+    <h2 class="h2 mt-5" style="font-weight:bold"> Room Status</h2>
     <table class="table mt-3"  style="text-align:center">
     <thead class="thead-dark">
         <tr>
