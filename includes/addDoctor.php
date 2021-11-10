@@ -8,7 +8,6 @@ $phoneno='';
 $dept='';
 $update=false;
 $id=0;
-$image='';
 $table_name='doctor';
 
 $mysqli=new mysqli('localhost','root','','hospital_management_system') or die(mysqli_error($mysqli));
@@ -20,7 +19,7 @@ if(isset($_POST['save'])){
     $phoneno=$_POST['phoneno'];
     $address=$_POST['address'];
     $dept=$_POST['department'];
-    $mysqli->query("INSERT INTO $table_name (id,name, gender,address, dob,phoneno,department,image) VALUES (UUID(),'$name','$gender','$address','$dob','$phoneno','$dept's") or die($mysqli->error);
+    $mysqli->query("INSERT INTO doctor(id,name,gender,address,dob,phoneno,department) VALUES (UUID(),'$name','$gender','$address','$dob','$phoneno','$dept')") or die($mysqli->error);
 
     $_SESSION['message']="Record has been added Successfully!";
     $_SESSION['msg_type']="success";
