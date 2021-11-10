@@ -11,9 +11,9 @@
       <li class="nav-item" role="presentation">
         <button class="nav-link" id="password-tab" data-bs-toggle="tab" data-bs-target="#password" type="button" role="tab" aria-controls="password" aria-selected="false">Change Password</button>
       </li>
-      <li class="nav-item" role="presentation">
+      <!-- <li class="nav-item" role="presentation">
         <button class="nav-link" id="theme-tab" data-bs-toggle="tab" data-bs-target="#theme" type="button" role="tab" aria-controls="theme" aria-selected="false">Theme</button>
-      </li>
+      </li> -->
     </ul>
     <div class="tab-content" id="myTabContent">
       <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -58,7 +58,7 @@
         <button class="btn btn-primary">Save</button>
 
       </div>
-      <div class="tab-pane fade" id="theme" role="tabpanel" aria-labelledby="theme-tab">
+      <!-- <div class="tab-pane fade" id="theme" role="tabpanel" aria-labelledby="theme-tab">
 
         <div class="color-theme-button">
           <h4>Select Color</h4>
@@ -96,7 +96,7 @@
         </div>
         <button class="btn btn-primary">Save Changes</button>
       </div>
-    </div>
+    </div> -->
   </div>
 </div>
 
