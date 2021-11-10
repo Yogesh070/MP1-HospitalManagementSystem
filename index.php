@@ -64,7 +64,8 @@
     </div> -->
     <div class="container my-4">
         <div class="row">
-            <div class="card col-sm">
+			<a href="doctor.php" style="text-decoration:none" class="card col-sm home-card">
+            <div>
                 <h2>Patients</h2>
                 <span class="count"><?php
                     $conn = new mysqli('localhost','root','','hospital_management_system') ;
@@ -78,25 +79,30 @@
                 <p><span>5.5%</span>More patient than usual</p>
                 <div class="card-icon"><i class="fas fa-hospital-user"></i></div>
             </div>
-            <div class="card col-sm mx-4">
-                <h2>Doctors</h2>
-                <span class="count"><?php
-                    $conn = new mysqli('localhost','root','','hospital_management_system') ;
-                    $sql = "SELECT * FROM doctor";
-                    if ($result=mysqli_query($conn,$sql)) {
-                        $rowcount=mysqli_num_rows($result);
-                        echo $rowcount; 
-                    }
-                    ?></span>
-                <p><span>5.5%</span>Doctors are avilable</p>
-                <div class="card-icon"><i class="fas fa-user-md"></i></div>
-            </div>
-            <div class="card col-sm">
+			</a>
+			<a href="doctor.php" style="text-decoration:none" class="card col-sm mx-4 home-card">
+				<div>
+					<h2>Doctors</h2>
+					<span class="count"><?php
+						$conn = new mysqli('localhost','root','','hospital_management_system') ;
+						$sql = "SELECT * FROM doctor";
+						if ($result=mysqli_query($conn,$sql)) {
+							$rowcount=mysqli_num_rows($result);
+							echo $rowcount; 
+						}
+						?></span>
+					<p><span>5.5%</span>Doctors are avilable</p>
+					<div class="card-icon"><i class="fas fa-user-md"></i></div>
+				</div>
+			</a>
+			<a href="room.php" style="text-decoration:none" class="card col-sm home-card">
+            <div>
                 <h2>Rooms Avilable</h2>
                 <span class="count">12</span>
                 <p><span>5.5%</span>Rooms Avilable</p>
                 <div class="card-icon"><i class="fas fa-home"></i></div>
             </div>
+			</a>
         </div>
     </div>
     
