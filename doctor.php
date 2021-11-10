@@ -1,6 +1,7 @@
+<?php require_once 'includes/addDoctor.php'?>
 <?php include "includes/header.php"?>
 <?php include "includes/menu.php"?>
-<?php require_once 'includes/addDoctor.php'?>
+
 <div class="col-md-10">
     <div class="container m-2">
         
@@ -24,6 +25,11 @@
         <?php endif;?>
             <div class="card card-body">
                 <form action="includes/addDoctor.php" method="POST">
+                <div class="form-group row">
+                        <div class="col-sm-10">
+                            <input type="hidden" class="form-control" name="id" value="<?php echo $id;?>">
+                        </div>
+                    </div>
                     <div class="form-group row">
                         <label for="name" class="col-sm-2 col-form-label">Name</label>
                         <div class="col-sm-10">
@@ -73,13 +79,27 @@
                                 required>
                         </div>
                     </div>
-                    <div class="form-group row">
+                    <div class="form-group row"> 
+                                <label for="department" class="col-sm-2 col-form-label">Department</label>
+                                <?php
+                                    $mysqli=new mysqli('localhost','root','','hospital_management_system') or die(mysqli_error($mysqli));
+                                    $result=$mysqli->query("SELECT * FROM department") or die($mysqli->error);
+                                    ?>
+                                <div class="col-sm-10">
+                                    <select class="form-control" placeholder="Department" name="department" id="department" required>
+                                        <?php while($row=$result->fetch_assoc()):?>
+                                        <option value=<?php echo $row['name']; ?>><?php echo $row['name']; ?></option>
+                                        <?php endwhile;?>
+                                    </select>
+                                </div>
+                            </div>
+                    <!-- <div class="form-group row">
                         <label for="dept" class="col-sm-2 col-form-label">Department</label>
                         <div class="col-sm-10">
                             <input type="text" class="form-control" id="dept" name="department" value="<?php echo $dept;?>"
                                 required>
                         </div>
-                    </div>
+                    </div> -->
                     <div class="form-group row">
                         <div class="col-sm-10">
                             <?php 
