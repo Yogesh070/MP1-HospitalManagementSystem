@@ -1,6 +1,6 @@
+<?php require_once 'includes/addNewPatient.php'?>
 <?php include "includes/header.php"?>
 <?php include "includes/menu.php"?>
-<?php require_once 'includes/addNewPatient.php'?>
 <div class="col-md-10">
     <div class="container m-2">
         

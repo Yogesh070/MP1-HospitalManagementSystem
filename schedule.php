@@ -1,6 +1,7 @@
+<?php require_once 'includes/addSchedule.php' ?>
 <?php include "includes/header.php" ?>
 <?php include "includes/menu.php" ?>
-<?php require_once 'includes/addSchedule.php' ?>
+
 <link rel="stylesheet" href="css/schedule-style.css" />
 <div class="col-sm-10">
     <div class="container-fluid">
