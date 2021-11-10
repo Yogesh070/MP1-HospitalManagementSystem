@@ -46,15 +46,25 @@
                     </div>
                     <div class="modal-body p-4">
                         <form action="includes/addSchedule.php" method="POST">
-                            <div class="form-row">
-                                <div class="form-group">
-                                    <label for="name">Name</label>
-                                    <input type="text" class="form-control" id="name" name="name">
+                            <div class="form-group row"> 
+                                <label for="doctor" class="col-sm-2 col-form-label">Doctor</label>
+                                <?php
+                                    $mysqli=new mysqli('localhost','root','','hospital_management_system') or die(mysqli_error($mysqli));
+                                    $result=$mysqli->query("SELECT * FROM doctor") or die($mysqli->error);
+                                    ?>
+                                <div class="col-sm-10">
+                                    <select class="form-control" placeholder="doctor" name="name" id="doctor" required>
+                                        <?php while($row=$result->fetch_assoc()):?>
+                                        <option value=<?php echo $row['name']; ?>><?php echo $row['name']; ?></option>
+                                        <?php endwhile;?>
+                                    </select>
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <label for="description">Description</label>
-                                <input type="text" class="form-control" id="description" name="description">
+                            <div class="form-group row">
+                                <label for="description" class="col-sm-2 col-form-label">Description</label>
+                                <div class="col-sm-10">
+                                    <input type="text" class="form-control" id="description" name="description">
+                                </div>
                             </div>
                             <span>Shift Duration</span>
                             <div class="form-row">
@@ -76,18 +86,20 @@
                                 <label for="minimum_hrs">Minimum Hours</label>
                                 <input type="number" class="form-control" id="minimum_hrs"  name="minimum_hrs">
                             </div> -->
-                            <div class="form-group">
-                                <label for="recurring_shift">Recurring Shift</label>
-                                <select class="form-control" placeholder="recurring_shift" name="recurring_shift" id="recurring_shift" required>
-                                    <option value="0">Never</option>
-                                    <option value="1">1 day</option>
-                                    <option value="2">2 days</option>
-                                    <option value="3">3 days</option>
-                                    <option value="4">4 days</option>
-                                    <option value="5">5 days</option>
-                                    <option value="6">6 days</option>
-                                    <option value="7">7 days</option>
-                                </select>
+                            <div class="form-group row">
+                                <label for="recurring_shift" class="col-sm-2 col-form-label">Recurring Shift</label>
+                                <div class="col-sm-10">
+                                    <select class="form-control" placeholder="recurring_shift" name="recurring_shift" id="recurring_shift" required>
+                                        <option value="0">Never</option>
+                                        <option value="1">1 day</option>
+                                        <option value="2">2 days</option>
+                                        <option value="3">3 days</option>
+                                        <option value="4">4 days</option>
+                                        <option value="5">5 days</option>
+                                        <option value="6">6 days</option>
+                                        <option value="7">7 days</option>
+                                    </select>
+                                </div>
                             </div>
                     </div>
                     <div class="modal-footer">
@@ -100,17 +112,17 @@
         </div>
     </div>
     <?php
-    $mysqli = new mysqli('localhost', 'root', '', 'hms_data') or die(mysqli_error($mysqli));
-    $result = $mysqli->query("SELECT * FROM Schedule") or die($mysqli->error);
-    $member_data = $mysqli->query("SELECT * FROM member_data") or die($mysqli->error);
+    $mysqli = new mysqli('localhost', 'root', '', 'hospital_management_system') or die(mysqli_error($mysqli));
+    $result = $mysqli->query("SELECT * FROM schedule") or die($mysqli->error);
+    $doctor = $mysqli->query("SELECT * FROM doctor") or die($mysqli->error);
     ?>
     <div class="container schedule-panel">
         <table class="table ">
             <thead>
                 <tr>
                     <th scope="col" class="table-head">
-                        <p>Members</p>
-                        <button class="btn-sm btn-primary">Show unscheduled</button>
+                        <p>Doctor</p>
+                        <!-- <button class="btn-sm btn-primary">Show unscheduled</button> -->
                     </th>
                     <th scope="col" class="table-head">
                         <div class="date-column">
@@ -166,37 +178,39 @@
                 <?php while ($row = $result->fetch_assoc()) : ?>
                     <tr>
                         <th scope="row"><img src="<?php
-                        while ($member_row = $member_data->fetch_assoc()) {
-                            if ($row['Name']==$member_row['Name']) {
-                                echo $member_row['Image'];
-                        }else {
-                            echo "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSgMQyeXHo2tzPRatT5CCO9xkei66IqM4Pn2g&usqp=CAU";}}?>" id="profile_picture" alt="profilepicture">
-                        <?php echo $row['Name']?></th>
+                        // while ($member_row = $doctor->fetch_assoc()) {
+                        //     if ($row['name']==$member_row['name']) {
+                        //         echo $member_row['name'];
+                        // }else {
+                            echo "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcSgMQyeXHo2tzPRatT5CCO9xkei66IqM4Pn2g&usqp=CAU";
+                            // }}
+                            ?>" id="profile_picture" alt="profilepicture">
+                        <?php echo $row['name']?></th>
                         <td><?php 
                         $date = strtotime("-1 day");
-                        if (date("Y-m-d", $date)==$row['Shift_from_day']) {
-                            echo $row['Shift_from_time']." to ". $row['Shift_to_time'];
+                        if (date("Y-m-d", $date)==$row['shift_from_day']) {
+                            echo $row['shift_from_time']." to ". $row['shift_to_time'];
                         }else {
                             echo "Free";
                         }?></td>
                         <td><?php 
-                        if (date("Y-m-d")==$row['Shift_from_day']) {
-                            echo $row['Shift_from_time']."-". $row['Shift_to_time'];
+                        if (date("Y-m-d")==$row['shift_from_day']) {
+                            echo $row['shift_from_time']."-". $row['shift_to_time'];
                         }
                         else {
                             echo "Free";
                         } ?></td>
                         <td><?php 
                         $date = strtotime("+1 day");
-                        if (date("Y-m-d", $date)==$row['Shift_from_day']) {
-                            echo $row['Shift_from_time']." to ". $row['Shift_to_time'];
+                        if (date("Y-m-d", $date)==$row['shift_from_day']) {
+                            echo $row['shift_from_time']." to ". $row['shift_to_time'];
                         }else {
                             echo "Free";
                         }?></td>
                         <td><?php 
                         $date = strtotime("+2 day");
-                        if (date("Y-m-d", $date)==$row['Shift_from_day']) {
-                            echo $row['Shift_from_time']." to ". $row['Shift_to_time'];
+                        if (date("Y-m-d", $date)==$row['shift_from_day']) {
+                            echo $row['shift_from_time']." to ". $row['shift_to_time'];
                         }else {
                             echo "Free";
                         }?></td>
